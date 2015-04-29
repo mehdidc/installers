@@ -1,0 +1,24 @@
+#!/bin/sh
+
+install_openblas() {
+    cd /tmp/
+    git clone https://github.com/xianyi/OpenBLAS.git
+
+    cd OpenBLAS
+    # TARGET=NEHALEM because of this issue (https://github.com/xianyi/OpenBLAS/issues/502)
+    make  USE_OPENMP=1 NO_AFFINITY=1 TARGET=NEHALEM
+    make install
+}
+
+pip install -U --no-deps git+git://github.com/Theano/Theano.git
+install_openblas # for theano
+
+# nolearn + lasagne
+wget -qO- https://raw.githubusercontent.com/dnouri/kfkd-tutorial/master/requirements.txt|sed -e "s/-e //g" > requirements.txt
+pip install -r requirements.txt
+rm -f requirements.txt
+
+# easy.py lasagne
+FOLDER=$(dirname $(which python))/../lib/python2.7/site-packages/lasagne
+echo $FOLDER
+wget https://raw.githubusercontent.com/mehdidc/Lasagne/master/lasagne/easy.py --output-document=$FOLDER/easy.py
