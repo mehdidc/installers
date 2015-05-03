@@ -14,9 +14,11 @@ pip install -U --no-deps git+git://github.com/Theano/Theano.git
 install_openblas # for theano
 
 # nolearn + lasagne
-wget -qO- https://raw.githubusercontent.com/dnouri/kfkd-tutorial/master/requirements.txt|sed -e "s/-e //g" > requirements.txt
-pip install -r requirements.txt
-rm -f requirements.txt
+#wget -qO- https://raw.githubusercontent.com/dnouri/kfkd-tutorial/master/requirements.txt|sed -e "s/-e //g" > requirements.txt
+pip install git+https://github.com/Lasagne/Lasagne
+pip install nolearn
+#pip install -r requirements.txt
+#rm -f requirements.txt
 
 # easy.py lasagne
 FOLDER=$(dirname $(which python))/../lib/python2.7/site-packages/lasagne
