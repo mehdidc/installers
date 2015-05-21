@@ -4,6 +4,8 @@ apt-get install -y git
 apt-get install -y htop
 apt-get install -y mc 
 apt-get install -y -qq libcurl4-openssl-dev build-essential 
+apt-get install -y python-pip python-dev python-setuptools
+
 pip install -U pyzmq pymongo hyperopt
 pip install -U ipython
 pip install -U scikit-learn
