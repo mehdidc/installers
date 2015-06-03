@@ -12,6 +12,7 @@ pip install -U scikit-learn
 pip install -U flask
 pip install -U gitpython
 pip install -U six
+pip install -U xray
 
 apt-get install -y zsh
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
