@@ -11,7 +11,7 @@ install_openblas() {
     make install
 }
 
-#pip install -U --no-deps git+git://github.com/Theano/Theano.git
+pip install -U --no-deps git+git://github.com/Theano/Theano.git
 install_openblas # for theano
 
 # nolearn + lasagne

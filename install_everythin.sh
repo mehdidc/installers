@@ -12,8 +12,14 @@ pip install -U scikit-learn
 pip install -U flask
 pip install -U gitpython
 pip install -U six
-pip install -U xray
 
+# xray
+pip install -U xray
+apt-get -y install libhdf5-dev
+apt-get -y install libnetcdf-dev
+pip install netcdf4
+
+# zsh
 apt-get install -y zsh
 wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 chsh -s /bin/zsh
